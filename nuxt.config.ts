@@ -94,13 +94,8 @@ export default defineNuxtConfig({
     '@nuxtjs/sitemap',
     '@nuxtjs/robots',
     '@nuxt/image',
+    '@nuxtjs/tailwindcss',
     ['nuxt-gtag', { id: 'G-FBH0E64HM1' }],
-    (_options, nuxt) => {
-      nuxt.hooks.hook('vite:extendConfig', (config) => {
-        // @ts-expect-error
-        config.plugins.push(vuetify({ autoImport: true }));
-      });
-    },
   ],
 
   robots: {
@@ -108,7 +103,7 @@ export default defineNuxtConfig({
     disallow: ['/assets/', '/data/', '/server/', '/store/', '/plugins/'],
   },
 
-  plugins: ['~/plugins/vuetify.ts', { src: '~/plugins/highcharts.ts', mode: 'client' }],
+  plugins: [{ src: '~/plugins/highcharts.ts', mode: 'client' }],
 
   runtimeConfig: {
     public: {
@@ -127,16 +122,15 @@ export default defineNuxtConfig({
     },
   },
 
-  build: {
-    transpile: ['vuetify'],
-  },
   vite: {
     define: {
       'process.env.DEBUG': false,
     },
-    vue: {
-      template: {
-        transformAssetUrls,
+    css: {
+      preprocessorOptions: {
+        sass: {
+          api: 'modern',
+        },
       },
     },
   },

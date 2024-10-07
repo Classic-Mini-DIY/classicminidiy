@@ -1,179 +1,104 @@
 <script lang="ts" setup>
-  import { useDisplay } from 'vuetify';
   import { ArchiveItems, ToolboxItems } from '~/data/models/generic';
-  const { lgAndUp } = useDisplay();
-  const showDrawer = ref(false);
 </script>
 
 <template>
-  <v-app-bar scroll-behavior="elevate">
-    <template #prepend>
-      <NuxtLink :to="'/'" class="d-inline-block ms-4 me-2">
-        <v-img
+  <div class="navbar bg-base-100 py-3">
+    <div class="navbar-start">
+      <div class="dropdown">
+        <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
+          </svg>
+        </div>
+        <ul tabindex="0" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+          <li>
+            <a href="https://classicminidiy.substack.com/" target="_blank">
+              <span><i class="fad fa-pencil"></i></span> Blog</a
+            >
+          </li>
+          <li>
+            <nuxt-link to="/maps">
+              <span><i class="fad fa-computer-classic"></i></span> Maps</nuxt-link
+            >
+          </li>
+          <li>
+            <a href="https://classicminidiy.substack.com/" target="_blank">
+              <span><i class="fad fa-store"></i></span> Store</a
+            >
+          </li>
+          <li>
+            <p>Archive</p>
+            <ul class="p-2">
+              <li v-for="item in ArchiveItems">
+                <nuxt-link> <span v-html="item.iconHtml"></span> {{ item.title }} </nuxt-link>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <p>Parent</p>
+            <ul class="p-2">
+              <li v-for="item in ToolboxItems">
+                <nuxt-link> <span v-html="item.iconHtml"></span> {{ item.title }} </nuxt-link>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <NuxtLink :to="'/'" class="d-inline-block">
+        <nuxt-img
           alt="Classic Mini DIY Logo"
-          src="https://classicminidiy.s3.amazonaws.com/misc/Small-Black.png"
-          :width="lgAndUp ? 115 : 75"
-          class="shrink"
-          :transition="false"
+          src="https://classicminidiy.s3.amazonaws.com/misc/small-logo.png"
+          class="w-32"
         />
       </NuxtLink>
-    </template>
-
-    <template #append>
-      <v-btn class="is-hidden-desktop" icon="fa:fad fa-bars" @click="showDrawer = !showDrawer" />
-      <div class="is-hidden-touch">
-        <!-- <v-btn prepend-icon="fa:fad fa-house" size="small" variant="text" to="/"> Home </v-btn> -->
-        <v-btn
-          prepend-icon="fa:fad fa-pencil"
-          size="small"
-          variant="text"
-          target="_blank"
-          href="https://classicminidiy.substack.com/"
-        >
-          Blog
-        </v-btn>
-        <v-btn prepend-icon="fa:fad fa-computer-classic" size="small" variant="text" to="/maps"> ECU Maps </v-btn>
-        <v-btn
-          prepend-icon="fa:fad fa-store"
-          size="small"
-          variant="text"
-          target="_blank"
-          href="https://merch.classicminidiy.com"
-        >
-          Store
-        </v-btn>
-        <v-menu transition="scale-transition" close-delay="100" location="bottom end" open-delay="10" open-on-hover>
-          <template v-slot:activator="{ props }">
-            <v-btn
-              size="small"
-              prepend-icon="fa:fad fa-books"
-              variant="text"
-              append-icon="fa:fas fa-chevron-down"
-              v-bind="props"
-            >
-              Archive
-            </v-btn>
-          </template>
-
-          <v-list density="compact">
-            <v-list-item v-for="(item, i) in ArchiveItems" :key="i" :value="item" :to="item.path">
-              <template v-slot:prepend>
-                <span v-html="item.iconHtml" class="pr-2 is-size-4"></span>
-              </template>
-              <v-list-item-title v-text="item.title"></v-list-item-title>
-            </v-list-item>
-          </v-list>
-        </v-menu>
-        <v-menu transition="scale-transition" close-delay="100" location="bottom end" open-delay="10" open-on-hover>
-          <template v-slot:activator="{ props }">
-            <v-btn
-              size="small"
-              prepend-icon="fa:fad fa-toolbox"
-              variant="text"
-              append-icon="fa:fas fa-chevron-down"
-              v-bind="props"
-            >
-              Toolbox
-            </v-btn>
-          </template>
-
-          <v-list density="compact">
-            <v-list-item v-for="(item, i) in ToolboxItems" :key="i" :value="item" :to="item.path">
-              <template v-slot:prepend>
-                <span v-html="item.iconHtml" class="pr-2 is-size-4"></span>
-              </template>
-              <v-list-item-title v-text="item.title"></v-list-item-title>
-            </v-list-item>
-          </v-list>
-        </v-menu>
-        <v-divider class="ml-2 mr-4 my-auto border-opacity-75" :thickness="2" vertical style="height: 16px" />
-        <v-btn
-          prepend-icon="fa:fab fa-patreon"
-          size="small"
-          class="donate me-3"
-          variant="outlined"
-          target="_blank"
-          href="https://patreon.com/classicminidiy"
-        >
-          Join CMDIY
-        </v-btn>
-      </div>
-    </template>
-  </v-app-bar>
-
-  <!-- MOBILE VERSION OF NAVIGATION -->
-  <v-navigation-drawer class="is-hidden-desktop" v-model="showDrawer">
-    <v-list density="compact" class="desktop-menu">
-      <v-list-item density="compact">
-        <v-btn prepend-icon="fa:fad fa-house" size="x-small" variant="text" to="/"> Home </v-btn></v-list-item
-      >
-      <v-list-item density="compact">
-        <v-btn
-          prepend-icon="fa:fad fa-pencil"
-          size="x-small"
-          variant="text"
-          target="_blank"
-          href="https://classicminidiy.substack.com/"
-        >
-          Blog
-        </v-btn></v-list-item
-      >
-      <v-list-item density="compact">
-        <v-btn
-          prepend-icon="fa:fad fa-store"
-          size="x-small"
-          variant="text"
-          target="_blank"
-          href="https://merch.classicminidiy.com"
-        >
-          Store
-        </v-btn></v-list-item
-      >
-      <v-list-item density="compact">
-        <v-btn prepend-icon="fa:fad fa-computer-classic" size="x-small" variant="text" to="/maps">
-          ECU Maps
-        </v-btn></v-list-item
-      >
-      <v-list-subheader> Free Online Toolbox </v-list-subheader>
-      <v-list-item
-        density="compact"
-        v-for="(item, i) in ToolboxItems"
-        :key="i"
-        :value="item"
-        :to="item.path"
-        class="mobile-menu"
-      >
-        <template v-slot:prepend>
-          <div v-html="item.iconHtml" class="pr-2 is-size-5"></div>
-        </template>
-        <v-list-item-title class="is-size-7" v-text="item.title"></v-list-item-title>
-      </v-list-item>
-      <v-list-subheader> Archives </v-list-subheader>
-      <v-list-item
-        density="compact"
-        v-for="(item, i) in ArchiveItems"
-        :key="i"
-        :value="item"
-        :to="item.path"
-        class="mobile-menu"
-      >
-        <template v-slot:prepend>
-          <div v-html="item.iconHtml" class="pr-2 is-size-5"></div>
-        </template>
-        <v-list-item-title class="is-size-7" v-text="item.title"></v-list-item-title>
-      </v-list-item>
-    </v-list>
-  </v-navigation-drawer>
+    </div>
+    <div class="navbar-end hidden lg:flex">
+      <ul class="menu menu-horizontal px-1">
+        <li>
+          <a href="https://classicminidiy.substack.com/" target="_blank">
+            <span><i class="fad fa-pencil"></i></span> Blog</a
+          >
+        </li>
+        <li>
+          <nuxt-link to="/maps">
+            <span><i class="fad fa-computer-classic"></i></span> Maps</nuxt-link
+          >
+        </li>
+        <li>
+          <a href="https://classicminidiy.substack.com/" target="_blank">
+            <span><i class="fad fa-store"></i></span> Store</a
+          >
+        </li>
+        <li>
+          <details>
+            <summary><i class="fad fa-books"></i>Archive</summary>
+            <ul class="p-2">
+              <li v-for="item in ArchiveItems" class="w-40 z-50">
+                <nuxt-link> <span v-html="item.iconHtml"></span> {{ item.title }} </nuxt-link>
+              </li>
+            </ul>
+          </details>
+        </li>
+        <li>
+          <details>
+            <summary><i class="fad fa-toolbox"></i>Toolbox</summary>
+            <ul class="p-2">
+              <li v-for="item in ToolboxItems" class="w-40">
+                <nuxt-link> <span v-html="item.iconHtml"></span> {{ item.title }} </nuxt-link>
+              </li>
+            </ul>
+          </details>
+        </li>
+      </ul>
+      <a class="btn donate" href="https://patreon.com/classicminidiy"> <i class="fab fa-patreon"></i>Join CMDIY</a>
+    </div>
+  </div>
 </template>
 
 <style lang="scss">
   .donate {
     background-color: #f96854;
     color: #fff;
-  }
-  .mobile-menu {
-    .v-list-item__prepend {
-      width: 35px;
-    }
   }
 </style>

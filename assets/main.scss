@@ -1,5 +1,7 @@
-// Import Bulma's core
-// @import '@/node_modules/bulma/sass/utilities/index';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 
 // Set your colors
 $brand: #659cc8;
@@ -8,14 +10,14 @@ $green: #4a7023;
 $patreon: #f96854;
 $guessworks: #b8b8b8;
 $amazon: #febd69;
-
-// Path to Bulma's sass folder
-@use "bulma/sass" with (
-  $success: $green,
-  $danger: $red,
-  $primary: $brand,
-  $link: $brand,
-);
+// Tailwind Colors
+// $primary: #71784E;
+// $secondary: #F6F7EB;
+// $accent: #BF4E30;
+// $info: #476C9B;
+// $success: #9FA677;
+// $warning: #FDC149;
+// $error: #871E1C;
 
 .is-patreon {
   background-color: $patreon !important;
@@ -34,10 +36,6 @@ $amazon: #febd69;
   border-color: $amazon !important;
   color: white !important;
 }
-
-
-@import 'bulma/bulma.scss';
-@import './divider.scss';
 
 // Import all my custom scss
 @import './fonts.scss';

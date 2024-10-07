@@ -45,7 +45,7 @@
 
 <template>
   <section
-    class="hero"
+    class="hero flex md:h-144 sm:h-96"
     :class="size"
     :style="[
       ecuMap
@@ -68,15 +68,15 @@
       !showImage ? { backgroundImage: 'none' } : {},
     ]"
   >
-    <div class="hero-body" :style="[blog ? { paddingTop: '4rem', paddingBottom: '4rem' } : {}]">
-      <div class="container" :class="{ 'has-text-centered': centered }">
-        <p class="subtitle is-6 has-text-white" :class="{ 'has-text-centered': blog }">
+    <div class="hero-content flex-col" :style="[blog ? { paddingTop: '4rem', paddingBottom: '4rem' } : {}]">
+      <div :class="{ 'text-centered': centered, 'text-left': !centered }" class="pl-20">
+        <p class="subtitle is-6 text-white" :class="{ 'text-centered': blog }">
           {{ subtitle }}
         </p>
         <h1
           v-if="title"
-          class="title fancy-font-bold has-text-white"
-          :class="{ 'special-title': special, 'has-text-centered': blog }"
+          class="title fancy-font-bold text-white"
+          :class="{ 'special-title': special, 'text-centered': blog }"
           v-html="title"
         />
       </div>
@@ -88,7 +88,6 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    margin-top: 4rem;
     background-color: #242424;
 
     .special-title {
