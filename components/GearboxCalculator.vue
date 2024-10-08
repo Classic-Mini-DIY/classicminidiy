@@ -292,19 +292,19 @@
     </v-col>
     <v-col cols="12">
       <nav class="level pb-5">
-        <div class="level-item has-text-centered">
+        <div class="level-item text-center">
           <div>
             <p class="heading">Revolutions per/Mile</p>
             <p class="title">{{ speedoDetails.engineRevsMile || '---' }}</p>
           </div>
         </div>
-        <div class="level-item has-text-centered">
+        <div class="level-item text-center">
           <div>
             <p class="heading">Cable Turns per/Mile</p>
             <p class="title">{{ speedoDetails.turnsPerMile || '---' }}</p>
           </div>
         </div>
-        <div class="level-item has-text-centered">
+        <div class="level-item text-center">
           <div>
             <p class="heading">Top Speed</p>
             <p class="title">{{ topSpeed || '---' }}</p>
@@ -314,37 +314,37 @@
     </v-col>
     <v-col cols="12">
       <nav class="level pb-5">
-        <div class="level-item has-text-centered">
+        <div class="level-item text-center">
           <div>
             <p class="heading">Tire Width</p>
             <p class="subtitle has-text-weight-bold">{{ tireInfo.width || '---' }}mm</p>
           </div>
         </div>
-        <div class="level-item has-text-centered">
+        <div class="level-item text-center">
           <div>
             <p class="heading">Tire Profile</p>
             <p class="subtitle has-text-weight-bold">{{ tireInfo.profile || '---' }}%</p>
           </div>
         </div>
-        <div class="level-item has-text-centered">
+        <div class="level-item text-center">
           <div>
             <p class="heading">Wheel Size</p>
             <p class="subtitle has-text-weight-bold">{{ tireInfo.size || '---' }}in</p>
           </div>
         </div>
-        <div class="level-item has-text-centered">
+        <div class="level-item text-center">
           <div>
             <p class="heading">Tire Diameter</p>
             <p class="subtitle has-text-weight-bold">{{ tireInfo.diameter || '---' }}mm</p>
           </div>
         </div>
-        <div class="level-item has-text-centered">
+        <div class="level-item text-center">
           <div>
             <p class="heading">Circumfrence</p>
             <p class="subtitle has-text-weight-bold">{{ tireInfo.circ || '---' }}mm</p>
           </div>
         </div>
-        <div class="level-item has-text-centered">
+        <div class="level-item text-center">
           <div>
             <p class="heading">Turns Per Mile</p>
             <p class="subtitle has-text-weight-bold">
@@ -415,7 +415,7 @@
       </div>
     </v-col>
     <v-col cols="12">
-      <div class="content has-text-centered">
+      <div class="content text-center">
         <p>
           Please note the above figures are <strong>approximate values</strong>. Before purchasing parts and building
           your engine we recommend <strong>doublechecking</strong> your calculations multiple times using more than one

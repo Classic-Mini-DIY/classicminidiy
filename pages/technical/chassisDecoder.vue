@@ -288,7 +288,7 @@
         </v-card>
       </v-col>
       <v-col cols="12">
-        <div class="content has-text-centered">
+        <div class="content text-center">
           <p>
             Please note the above details were pulled from <strong>Mini Mania's</strong> technical articles. More
             Details can be found here:

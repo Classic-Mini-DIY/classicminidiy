@@ -31,7 +31,7 @@
             <p>Archive</p>
             <ul class="p-2">
               <li v-for="item in ArchiveItems">
-                <nuxt-link> <span v-html="item.iconHtml"></span> {{ item.title }} </nuxt-link>
+                <nuxt-link :to="item.to"> <span v-html="item.iconHtml"></span> {{ item.title }} </nuxt-link>
               </li>
             </ul>
           </li>
@@ -39,7 +39,7 @@
             <p>Parent</p>
             <ul class="p-2">
               <li v-for="item in ToolboxItems">
-                <nuxt-link> <span v-html="item.iconHtml"></span> {{ item.title }} </nuxt-link>
+                <nuxt-link :to="item.to"> <span v-html="item.iconHtml"></span> {{ item.title }} </nuxt-link>
               </li>
             </ul>
           </li>
@@ -48,7 +48,7 @@
       <NuxtLink :to="'/'" class="d-inline-block">
         <nuxt-img
           alt="Classic Mini DIY Logo"
-          src="https://classicminidiy.s3.amazonaws.com/misc/small-logo.png"
+          src="https://classicminidiy.s3.amazonaws.com/misc/Small-Black.png"
           class="w-32"
         />
       </NuxtLink>
@@ -75,7 +75,7 @@
             <summary><i class="fad fa-books"></i>Archive</summary>
             <ul class="p-2">
               <li v-for="item in ArchiveItems" class="w-40 z-50">
-                <nuxt-link> <span v-html="item.iconHtml"></span> {{ item.title }} </nuxt-link>
+                <nuxt-link :to="item.to"> <span v-html="item.iconHtml"></span> {{ item.title }} </nuxt-link>
               </li>
             </ul>
           </details>
@@ -85,7 +85,7 @@
             <summary><i class="fad fa-toolbox"></i>Toolbox</summary>
             <ul class="p-2">
               <li v-for="item in ToolboxItems" class="w-40">
-                <nuxt-link> <span v-html="item.iconHtml"></span> {{ item.title }} </nuxt-link>
+                <nuxt-link :to="item.to"> <span v-html="item.iconHtml"></span> {{ item.title }} </nuxt-link>
               </li>
             </ul>
           </details>

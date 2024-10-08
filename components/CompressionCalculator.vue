@@ -242,7 +242,7 @@
     <v-col cols="12" md="6">
       <div class="card py-5">
         <nav class="level">
-          <div class="level-item has-text-centered">
+          <div class="level-item text-center">
             <div>
               <p class="heading">Compression Ratio</p>
               <p class="title">
@@ -256,7 +256,7 @@
     <v-col cols="12" md="6">
       <div class="card py-5">
         <nav class="level">
-          <div class="level-item has-text-centered">
+          <div class="level-item text-center">
             <div>
               <p class="heading">Engine Capacity</p>
               <p class="title">
@@ -268,7 +268,7 @@
       </div>
     </v-col>
     <v-col cols="12">
-      <div class="content has-text-centered">
+      <div class="content text-center">
         <p>
           Please note the above figures are <strong>approximate values</strong>. Before purchasing parts and building
           your engine we recommend <strong>doublechecking</strong> your calculations multiple times using more than one

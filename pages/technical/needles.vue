@@ -54,7 +54,7 @@
       <v-col cols="12" md="10" offset-md="1">
         <div class="divider">Needle Charts</div>
       </v-col>
-      <v-col cols="12" class="has-text-centered">
+      <v-col cols="12" class="text-center">
         <h4 class="fancy-font-book is-size-3">Find the needle for your carb</h4>
         <h5 class="fancy-font-book is-size-5">
           Information provided by

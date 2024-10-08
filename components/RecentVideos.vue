@@ -4,7 +4,7 @@
 
 <template>
   <div class="col-span-12">
-    <h3 class="fancy-font-bold text-h4 has-text-centered pb-5">Recent Videos</h3>
+    <h3 class="fancy-font-bold text-h4 text-center pb-5">Recent Videos</h3>
   </div>
 
   <div v-if="pending" class="col-span-12 md:col-span-3" v-for="item in 3">

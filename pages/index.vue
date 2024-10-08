@@ -28,13 +28,14 @@
       <div class="col-span-12 md:col-span-8">
         <h2 class="fancy-font-book-oblique"><i class="fad fa-book"></i> THE MINI MISSION</h2>
         <h3 class="fancy-font-bold text-h4 pt-2 pb-3">Keeping the Classics on the Road</h3>
-        <p class="text-xl">
+        <p class="text-xl pb-5">
           Classic Mini DIY started out of my small driveway workshop in 2015. I always focus on two things: keeping your
           Classic Mini on the road and making DIY car work accessible for all skill levels. I make DIY videos and
           tutorials showing exactly how to complete a wide range of jobs on your Classic Mini. I also partner with
           world-class manufacturers to deliver top-of-the-line products to personalize and ensure the performance of
           your Classic Mini.
         </p>
+        <stats />
       </div>
       <div class="col-span-12 md:col-span-4">
         <h3 class="fancy-font-book-oblique"><i class="fad fa-gift"></i> SUPPORT THE MISSION</h3>
@@ -57,9 +58,6 @@
           <span>Contribute</span>
         </a>
       </div>
-      <div class="pt-10 col-span-12 mx-auto">
-        <stats />
-      </div>
       <div class="pt-20 pb-10 grid grid-cols-subgrid col-span-12 gap-4">
         <recent-videos></recent-videos>
       </div>
@@ -78,71 +76,25 @@
         <div class="col-span-12 md:col-span-7">
           <h3 class="fancy-font-book-oblique"><i class="fad fa-handshake-alt"></i> THE COMPLETELY FREE</h3>
           <h3 class="fancy-font-bold text-h4">Classic Mini Toolbox</h3>
-          <h4 class="fancy-font-book-oblique pt-20">THE TOOLKIT FOR THE DIY MECHANIC</h4>
-          <p>
+          <h4 class="fancy-font-book-oblique pt-5 pb-5">THE TOOLKIT FOR THE DIY MECHANIC</h4>
+          <p class="pb-5">
             One of the largest reasons for starting this channel, was about making infromation related to working your
             Mini Cooper more accessible. In service to this goal I have created the Classic Mini Toolbox. Combining
             information from all over the web to bring you one location to find anything you need.
           </p>
-          <div class="grid-cols-subgrid col-span-12 md:col-span-7 gap-4 hidden md:grid is-centered pt-50">
-            <NuxtLink
-              v-for="(item, index) in LandingPageToolboxItems"
-              :key="index"
-              class="col-span-3"
-              :to="item.to"
-              :title="'Link to ' + item.to"
-            >
-              <article class="has-text-centered">
-                <nuxt-img
-                  class="panel-icon-home"
-                  format="webp"
-                  :src="item.image"
-                  aria-hidden="true"
-                  :alt="item.title + ' image'"
-                />
-                <p class="heading has-text-black">
-                  {{ item.title }}
-                </p>
-              </article>
-            </NuxtLink>
-          </div>
-        </div>
-        <div class="md:hidden col-span-12">
-          <div class="max-w-2xl mx-auto">
-            <div class="p-4 mt-5 max-w-md bg-white rounded-lg shadow-md sm:p-8 dark:bg-gray-800 dark:border-gray-700">
-              <div class="flex justify-between items-center mb-4">
-                <h3 class="text-xl font-bold leading-none">Toolbox</h3>
-              </div>
-              <div class="flow-root">
-                <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700 benefits-list">
-                  <li class="py-1 sm:py-1" v-for="(item, index) in LandingPageToolboxItems" :key="index">
-                    <NuxtLink :to="item.to">
-                      <div class="flex items-center space-x-4">
-                        <div class="flex-shrink-0">
-                          <nuxt-img format="webp" class="h-16" :src="item.image" :alt="item.title + ' image'" />
-                        </div>
-                        <div class="flex-1 min-w-0">
-                          <p class="text-sm font-medium">{{ item.title }}</p>
-                        </div>
-                      </div>
-                    </NuxtLink>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
+          <nuxt-link class="btn btn-primary text-lg" to="/technical"> Open the toolbox </nuxt-link>
         </div>
       </div>
       <div class="grid grid-cols-12 gap-4">
         <div class="col-span-12 md:col-span-8 lg:col-span-6">
           <h3 class="fancy-font-book-oblique pb-5"><i class="fad fa-hands-heart"></i> SUPPORT THE CHANNEL</h3>
-          <h3 class="fancy-font-bold text-h4 pb-10">Become a Patreon</h3>
+          <h3 class="fancy-font-bold text-h4 pb-5">Become a Patreon</h3>
           <p class="text-xl">
             Classic Mini DIY is
             <strong>completely free resource</strong> supported by our viewers. If you are interested in helping to keep
             the channel alive, consider supporting on Patreon.
           </p>
-          <a class="mt-4 btn is-patreon" rel="noopener" href="https://patreon.com/classicminidiy" target="_blank">
+          <a class="mt-5 mb-5 btn is-patreon" rel="noopener" href="https://patreon.com/classicminidiy" target="_blank">
             <span class="icon">
               <i class="fab fa-patreon" />
             </span>
@@ -212,15 +164,15 @@
     <div class="container">
       <div class="grid grid-cols-12 gap-4">
         <div class="col-span-12 md:col-span-7">
-          <h3 class="fancy-font-bold is-size-3"><i class="fad fa-address-card"></i> About Me</h3>
-          <h4 class="fancy-font-book-oblique pt-20">MY NAME IS COLE</h4>
+          <h3 class="fancy-font-bold text-2xl"><i class="fad fa-address-card"></i> About Me</h3>
+          <h4 class="fancy-font-book-oblique pt-5">MY NAME IS COLE</h4>
           <p>
             I am a {{ age }}-year-old Web Developer working in the financial industry. My experience in the automotive
             industry comes from 2 years of training on heavy diesel machinery and 8 years of Classic Mini ownership.
             With this experience, I do my best to provide the most comprehensive and technically correct information I
             can.
           </p>
-          <h3 class="fancy-font-book-oblique pt-30">MY PROMISE</h3>
+          <h3 class="fancy-font-book-oblique pt-10">MY PROMISE</h3>
           <p>
             I will provide you with all the knowledge I can to the best of my ability. I will also accept feedback in
             the event that I get something incorrect. I am an enthusiast and not a complete expert so from time to time

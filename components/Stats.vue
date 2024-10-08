@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <div class="stats stats-vertical md:stats-horizontal shadow">
+  <div class="stats stats-vertical lg:stats-horizontal shadow">
     <div class="stat">
       <div class="stat-figure text-primary">
         <svg

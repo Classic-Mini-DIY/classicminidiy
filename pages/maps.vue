@@ -158,46 +158,43 @@
       :ecuMap="true"
       :size="'is-medium'"
     />
-    <v-container>
-      <v-row>
-        <v-col cols="12" md="6" offset-md="3">
-          <h1 class="fancy-font-bold is-size-3 has-text-centered">The Classic Mini ECU Map</h1>
-          <h2 class="fancy-font-book-oblique has-text-centered is-size-4">
+    <div class="container pt-10">
+      <div class="grid grid-cols-12 gap-4">
+        <div class="col-span-12 md:col-span-6 md:col-start-4">
+          <h1 class="fancy-font-bold text-h4 pb-5 text-center">The Classic Mini ECU Map</h1>
+          <h2 class="fancy-font-book-oblique text-center text-lg">
             Hey folks! Cole here with Classic Mini DIY. After countless hours and time spent porting, converting, and
             mapping multiple ECU's, I am proud to release my collection of ECU maps with two options for access.
             Offering support for many popular ECU's used on Classic Minis, with more added in the future.
           </h2>
-        </v-col>
-        <v-col cols="12" md="10" offset-md="1" class="pt-10 pb-10">
-          <nav class="level">
-            <div class="level-item has-text-centered">
-              <div>
-                <i class="fad fa-flag-checkered is-size-2 pb-3"></i>
-                <h3 class="subtitle">A Safe Start</h3>
-              </div>
-            </div>
-            <div class="level-item has-text-centered">
-              <div>
-                <i class="fad fa-microchip is-size-2 pb-3"></i>
-                <h3 class="subtitle">Support for Multiple ECUs</h3>
-              </div>
-            </div>
-            <div class="level-item has-text-centered">
-              <div>
-                <i class="fa-duotone fa-arrows-rotate fa-spin is-size-2 mb-3"></i>
-                <h3 class="subtitle">Lifetime Updates</h3>
-              </div>
-            </div>
-            <div class="level-item has-text-centered">
-              <div>
-                <i class="fad fa-money-bill fa-beat is-size-2 pb-3"></i>
-                <h3 class="subtitle">Pay what you want</h3>
-              </div>
-            </div>
-          </nav>
-        </v-col>
+        </div>
+        <div class="col-span-12"></div>
+        <div class="col-span-12 md:col-span-3 md:start-1 text-center">
+          <div>
+            <i class="fad fa-flag-checkered is-size-2 pb-3"></i>
+            <h3 class="subtitle">A Safe Start</h3>
+          </div>
+        </div>
+        <div class="col-span-12 md:col-span-3 md:start-1 text-center">
+          <div>
+            <i class="fad fa-microchip is-size-2 pb-3"></i>
+            <h3 class="subtitle">Support for Multiple ECUs</h3>
+          </div>
+        </div>
+        <div class="col-span-12 md:col-span-3 md:start-1 text-center">
+          <div>
+            <i class="fa-duotone fa-arrows-rotate fa-spin is-size-2 mb-3"></i>
+            <h3 class="subtitle">Lifetime Updates</h3>
+          </div>
+        </div>
+        <div class="col-span-12 md:col-span-3 md:start-1 text-center">
+          <div>
+            <i class="fad fa-money-bill fa-beat is-size-2 pb-3"></i>
+            <h3 class="subtitle">Pay what you want</h3>
+          </div>
+        </div>
 
-        <v-col cols="12" md="6" class="has-text-centered">
+        <div class="col-span-12 md:col-span-6 text-center">
           <v-card>
             <v-card-text>
               <i class="fad fa-credit-card is-size-2 pb-3"></i>
@@ -220,8 +217,8 @@
               </v-btn>
             </v-card-text>
           </v-card>
-        </v-col>
-        <v-col cols="12" md="6" class="has-text-centered">
+        </div>
+        <div class="col-span-12 md:col-span-6 text-center">
           <v-card class="pb-2">
             <v-card-text>
               <i class="fad fa-download is-size-2 pb-3"></i>
@@ -245,11 +242,11 @@
               </v-btn>
             </v-card-text>
           </v-card>
-        </v-col>
-        <v-col cols="12" md="10" offset-md="1">
+        </div>
+        <div class="col-span-12 md:col-span-10 md:col-start-2 text-center">
           <div class="divider">More Details</div>
-        </v-col>
-        <v-col cols="12">
+        </div>
+        <div class="col-span-12">
           <v-card>
             <v-card-text>
               <v-table>
@@ -322,8 +319,8 @@
               </v-row>
             </v-card-text>
           </v-card>
-        </v-col>
-        <v-col cols="12" md="6">
+        </div>
+        <div class="col-span-12 md:col-span-6">
           <nav class="panel is-secondary">
             <h5 class="panel-heading"><i class="fad fa-code-branch" /> Latest Updates</h5>
             <!-- <v-progress-circular v-if="commitsLoading === 'pending'"></v-progress-circular>
@@ -371,9 +368,9 @@
               </v-btn>
             </div>
           </nav>
-        </v-col>
-        <v-col cols="12" md="6">
-          <h3 class="fancy-font-bold is-size-2 has-text-centered pb-5">Supported ECU's</h3>
+        </div>
+        <div class="col-span-12 md:col-span-6">
+          <h3 class="fancy-font-bold is-size-2 text-center pb-5">Supported ECU's</h3>
           <div class="columns is-multiline">
             <div class="column is-8 is-offset-2">
               <div class="divider">Support for the ecu you need</div>
@@ -397,15 +394,15 @@
               <img class="" src="/img/ecus/dta.jpg" alt="" />
             </div>
           </div>
-        </v-col>
-        <v-col cols="12" md="10" offset-md="1">
+        </div>
+        <div class="col-span-12 md:col-span-10 md:col-start-2">
           <div class="divider">Other ways to support</div>
-        </v-col>
-        <v-col cols="12">
+        </div>
+        <div class="col-span-12">
           <patreon-card size="large" />
-        </v-col>
-      </v-row>
-    </v-container>
+        </div>
+      </div>
+    </div>
   </div>
   <SpeedInsights />
 </template>
